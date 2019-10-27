@@ -108,19 +108,6 @@ exports.decorateTerm = (Term, { React, notify }) => {
       )
       // handle each letter
       this._letters.forEach(l => {
-        // when the character bounces off bottom
-        if (l.lastBounce > 10 && l.y > this._canvas.height - 10) {
-          // bouncyness
-          l.vy *= -0.6
-
-          // random rotation
-          l.vr = (Math.random() - 0.5) * 0.05,
-
-          // dampen horizontal speed
-          l.vx *= 0.8
-          l.lastBounce = 0
-        }
-
         l.lastBounce++
 
         // handle left / right walls too?
