@@ -40,7 +40,7 @@ exports.decorateTerm = (Term, { React, notify }) => {
       let origin = this._div.getBoundingClientRect()
       x = x + origin.left
       y = y + origin.top
-      console.log("Spawning letter", letter, x, y)
+      // console.log("Spawning letter", letter, x, y)
       const length = this._letters.length
 
       // Initial values
@@ -63,17 +63,17 @@ exports.decorateTerm = (Term, { React, notify }) => {
       })
 
       if (!this._active) {
-        console.log("activating...")
+        // console.log("activating...")
         window.requestAnimationFrame(this._drawFrame)
         this._active = true
       }
     }
 
     _onDecorated(term) {
-      console.log("on deco", term)
+      // console.log("on deco", term)
       if (this.props.onDecorated) this.props.onDecorated(term)
       if (term) {
-        console.log("termed")
+        // console.log("termed")
         this._div = term.termRef
         this._initCanvas()
       }
@@ -142,7 +142,7 @@ exports.decorateTerm = (Term, { React, notify }) => {
       if (this._letters.length > 0) {
         window.requestAnimationFrame(this._drawFrame)
       } else {
-        console.log("deactivating...")
+        // console.log("deactivating...")
         this._active = false
       }
 
